@@ -227,85 +227,142 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Row(
                               children: [
                                 Container(
-                                  decoration:
-                                      const BoxDecoration(color: Colors.red),
-                                  height: 130,
-                                  width: 400,
-                                  child: Row(
+                                  height: 250,
+                                  width: 155,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.shade300,
+                                        offset: const Offset(1, 5),
+                                        blurRadius: 20,
+                                        spreadRadius: 1,
+                                      )
+                                    ],
+                                    border: Border.all(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
-                                        height: 100,
-                                        width: 100,
-                                        decoration: const BoxDecoration(
-                                            color: Colors.white),
-                                        child: Column(
-                                          children: [
-                                            Container(
-                                              height: 60,
-                                              width: 100,
-                                              decoration: BoxDecoration(
-                                                  color: Colors.grey),
-                                              child: Row(
-                                                children: [
-                                                  Column(
-                                                    children: [
-                                                      Container(
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: Colors.white,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(10),
-                                                          boxShadow: [
-                                                            BoxShadow(
-                                                              color: Colors.grey
-                                                                  .shade300,
-                                                              offset:
-                                                                  Offset(1, 5),
-                                                              blurRadius: 20,
-                                                              spreadRadius: 1,
-                                                            ),
-                                                          ],
-                                                          border: Border.all(
-                                                            color: Colors.white,
-                                                          ),
-                                                        ),
-                                                        margin:
-                                                            EdgeInsets.all(10),
-                                                        height: 120,
-                                                        width: 100,
-                                                        child: Image.asset(
-                                                          'assets/img/ff.jpeg',
-                                                          height: 5,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
+                                      Padding(
+                                        padding: EdgeInsets.all(12.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          child: Image.asset(
+                                              'assets/img/apple.jpeg'),
                                         ),
                                       ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text("Fresh Apple",
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold)),
+                                      ),
+                                      Text(
+                                        "\$10/500 gram",
+                                        style: TextStyle(fontSize: 10),
+                                      ),
+                                      ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor:
+                                                const Color(0xffCB411A),
+                                          ),
+                                          onPressed: () {},
+                                          child: Text("  Add  ")),
                                     ],
                                   ),
                                 ),
-                              ],
-                            ),
+                                Container(
+                                  height: 250,
+                                  width: 155,
+                                  decoration: BoxDecoration(
+
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.shade300,
+                                        offset: const Offset(1, 5),
+                                        blurRadius: 20,
+                                        spreadRadius: 1,
+                                      )
+                                    ],
+                                    border: Border.all(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  margin: const EdgeInsets.all(10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.center,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.all(12.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                          BorderRadius.circular(10),
+                                          child: Image.asset(
+                                              'assets/img/cherry.jpeg'),
+                                        ),
+                                      ),
+                                      Padding(
+
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text("Fresh Cherries",
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold)),
+                                      ),
+                                      Text(
+                                        "\$30/500 gram",
+                                        style: TextStyle(fontSize: 10),
+                                      ),
+                                      Container(
+                                        height: 40,
+                                        width: 130,
+                                        decoration: BoxDecoration(color: Colors.black),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            FloatingActionButton(onPressed: (){
+
+                                      },child: Text("-"),
+                                        backgroundColor: Colors.red,
+                                      ),
+                                          Text("1"),
+                                            SizedBox(width: 10),
+                                            FloatingActionButton(onPressed: (){
+
+                                            },child: Text("+"),
+                                              backgroundColor: Colors.red,
+                                            ),
+                                        ],
+
+                                        ),
+                                      ),
+                                  ],
+                                )
+                                ),
+                            ],
                           ),
-                        ],
-                      ),
+
+
+                          ),
+                      ],
                     ),
-                  ],
-                ),
+                    ),
+                ],
               ),
-            ],
-          ),
+              ),
+          ],
         ),
       ),
-    );
+    ),);
   }
 }
