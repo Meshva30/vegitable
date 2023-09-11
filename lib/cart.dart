@@ -40,69 +40,329 @@ class _HomeScreenState extends State<CartScreen> {
             ],
           ),
         ),
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'MY Cart',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
+        body: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 20),
+                Text("MY Cart",
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                SizedBox(
+                  height: 30,
+                ),
+                Container(
+                  height: 100,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.shade400,
+                          blurRadius: 0.5,
+                          spreadRadius: 0.1),
+                    ],
                   ),
-                  SizedBox(height: 30),
-                  Container(
-                    height: 100,
-                    width: 400,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade300,
-                          offset: const Offset(1, 5),
-                          blurRadius: 20,
-                          spreadRadius: 1,
-                        )
-                      ],
-                      border: Border.all(
-                        color: Colors.white,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 15,
+                        height: 50,
                       ),
-                    ),
-                    margin: const EdgeInsets.all(10),
-                    child: Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(12.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.asset('assets/img/apple.jpeg'),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text("Fresh Apple",
-                                  style: TextStyle(
-                                      fontSize: 15, fontWeight: FontWeight.bold)),
-                            ),
-                          ],
+                      Container(
+                        height: 70,
+                        width: 105,
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage('assets/img/apple.jpeg'),
+                              fit: BoxFit.fill),
                         ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                        height: 50,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          const Text("Fresh Apple",
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          Text("500 Gram", style: TextStyle(fontSize: 15)),
+                          Text("\$10",
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold)),
+                          Row(
+                            children: [
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              InkWell(
+                                child: Container(
+                                  height: 25,
+                                  width: 25,
+                                  decoration: const BoxDecoration(
+                                      color: Color(0xffCB411A),
+                                      shape: BoxShape.circle),
+                                  child: const Icon(Icons.add,
+                                      size: 19, color: Colors.white),
+                                ),
+                                onTap: () {
+                                  setState(() {
+                                    num++;
+                                  });
+                                },
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text("$num"),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              InkWell(
+                                child: Container(
+                                  height: 25,
+                                  width: 25,
+                                  decoration: const BoxDecoration(
+                                      color: Color(0xffCB411A),
+                                      shape: BoxShape.circle),
+                                  child: const Icon(Icons.remove,
+                                      size: 19, color: Colors.white),
+                                ),
+                                onTap: () {
+                                  setState(() {
+                                    if (num > 0) {
+                                      num--;
+                                    }
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 40),
+                      Text("remove"),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                SizedBox(height: 20),
+                Container(
+                  height: 100,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.shade400,
+                          blurRadius: 0.5,
+                          spreadRadius: 0.1),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 15,
+                        height: 50,
+                      ),
+                      Container(
+                        height: 70,
+                        width: 105,
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage('assets/img/banana.jpeg'),
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                        height: 50,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          const Text("Fresh Banana",
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          Text("500 Gram", style: TextStyle(fontSize: 15)),
+                          Text("\$10",
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold)),
+                          Row(
+                            children: [
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              InkWell(
+                                child: Container(
+                                  height: 25,
+                                  width: 25,
+                                  decoration: const BoxDecoration(
+                                      color: Color(0xffCB411A),
+                                      shape: BoxShape.circle),
+                                  child: const Icon(Icons.add,
+                                      size: 19, color: Colors.white),
+                                ),
+                                onTap: () {
+                                  setState(() {
+                                    num++;
+                                  });
+                                },
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text("$num"),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              InkWell(
+                                child: Container(
+                                  height: 25,
+                                  width: 25,
+                                  decoration: const BoxDecoration(
+                                      color: Color(0xffCB411A),
+                                      shape: BoxShape.circle),
+                                  child: const Icon(Icons.remove,
+                                      size: 19, color: Colors.white),
+                                ),
+                                onTap: () {
+                                  setState(() {
+                                    if (num > 0) {
+                                      num--;
+                                    }
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 40),
+                      Text("remove"),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 20),
+                Container(
+                  height: 100,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.shade400,
+                          blurRadius: 0.5,
+                          spreadRadius: 0.1),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 15,
+                        height: 50,
+                      ),
+                      Container(
+                        height: 70,
+                        width: 105,
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(10),
+                          image: const DecorationImage(
+                              image: AssetImage('assets/img/makai.jpg'),
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 15,
+                        height: 50,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          const Text("Makai",
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          Text("500 Gram", style: TextStyle(fontSize: 15)),
+                          Text("\$10",
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold)),
+                          Row(
+                            children: [
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              InkWell(
+                                child: Container(
+                                  height: 25,
+                                  width: 25,
+                                  decoration: const BoxDecoration(
+                                      color: Color(0xffCB411A),
+                                      shape: BoxShape.circle),
+                                  child: const Icon(Icons.add,
+                                      size: 19, color: Colors.white),
+                                ),
+                                onTap: () {
+                                  setState(() {
+                                    num++;
+                                  });
+                                },
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text("$num"),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              InkWell(
+                                child: Container(
+                                  height: 25,
+                                  width: 25,
+                                  decoration: const BoxDecoration(
+                                      color: Color(0xffCB411A),
+                                      shape: BoxShape.circle),
+                                  child: const Icon(Icons.remove,
+                                      size: 19, color: Colors.white),
+                                ),
+                                onTap: () {
+                                  setState(() {
+                                    if (num > 0) {
+                                      num--;
+                                    }
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 40),
+                      Text("remove"),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
   }
 }
+
+int num = 1;
+int num1 = 1;
+int num2 = 1;
